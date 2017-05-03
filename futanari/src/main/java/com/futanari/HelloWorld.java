@@ -3,14 +3,22 @@ package com.futanari;
 import com.futanari.util.AESUtil;
 import com.futanari.util.WXBizDataCrypt;
 import org.apache.commons.codec.binary.Base64;
+import org.apache.commons.lang3.time.FastDateFormat;
 
 import javax.crypto.NoSuchPaddingException;
+import java.math.BigDecimal;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.NoSuchAlgorithmException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 public class HelloWorld {
 
-	public static void main(String[] args) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidAlgorithmParameterException {
+	private static SimpleDateFormat sdf3 = new SimpleDateFormat("yyyy-MM-dd");
+
+	public static void main(String[] args) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidAlgorithmParameterException, ParseException {
 		String appId = "wx4f4bc4dec97d474b";
 		String sessionKey = "tiihtNczf5v6AKRyjwEUhQ==";
 		String encryptedData =
@@ -35,6 +43,84 @@ public class HelloWorld {
 			System.out.println(userInfo);
 		}
 
+		Date a = new Date();
+		Calendar c = Calendar.getInstance();
+		c.setTime(a);
+		c.add(Calendar.DATE,5);
+		Date b = c.getTime();
+
+		// b > a
+		System.out.println(b.before(a));
+		System.out.println(b.after(a));
+		System.out.println(a.before(b));
+		System.out.println(a.after(b));
+		System.out.println(a.after(a));
+		System.out.println(b.after(b));
+
+//		for(int i=0;i<5;i++) {
+//			new CalculateTime().run();
+//		}
+
+		BigDecimal bg1, bg2;
+
+		bg1 = new BigDecimal("10");
+		bg2 = new BigDecimal("20");
+
+		//create int object
+		int res;
+
+		res = bg1.compareTo(bg2); // compare bg1 with bg2
+
+		System.out.println(res);
+
 	}
 
+	private void CalculateTime() throws ParseException {
+		int aa = 0;
+		Date max = sdf3.parse("2017-07-09");
+		Date min = sdf3.parse("2017-04-11");
+		while(aa < 20) {
+			String[] startEndDate = new String[2];
+			Calendar dd = Calendar.getInstance();
+			dd.setTime(max);
+			dd.add(Calendar.DAY_OF_MONTH, 1);
+			startEndDate[1] = sdf3.format(dd.getTime());
+			dd.setTime(min);
+			dd.add(Calendar.DAY_OF_MONTH, -1);
+			startEndDate[0] = sdf3.format(dd.getTime());
+			System.out.println(startEndDate[0] + "," + startEndDate[1]);
+			aa++;
+		}
+	}
+
+}
+
+class CalculateTime implements Runnable {
+
+	private static FastDateFormat sdf3 = FastDateFormat.getInstance("yyyy-MM-dd");
+
+//	private static SimpleDateFormat sdf3 = new SimpleDateFormat("yyyy-MM-dd");
+
+	@Override
+	public void run() {
+		try {
+			int aa = 0;
+			Date max = sdf3.parse("2017-07-09");
+			Date min = sdf3.parse("2017-04-11");
+			while(aa < 20) {
+				String[] startEndDate = new String[2];
+				Calendar dd = Calendar.getInstance();
+				dd.setTime(max);
+				dd.add(Calendar.DAY_OF_MONTH, 1);
+				startEndDate[1] = sdf3.format(dd.getTime());
+				dd.setTime(min);
+				dd.add(Calendar.DAY_OF_MONTH, -1);
+				startEndDate[0] = sdf3.format(dd.getTime());
+				System.out.println(startEndDate[0] + "," + startEndDate[1]);
+				aa++;
+			}
+		} catch (Exception e) {
+
+		}
+	}
 }
