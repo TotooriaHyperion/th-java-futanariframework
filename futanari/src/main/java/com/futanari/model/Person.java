@@ -10,11 +10,16 @@ public class Person {
 	private Integer age;
 	private List<Car> cars;
 
+	Person() {
+		System.out.println("构造器");
+	}
+
 	public String getName() {
 		return name;
 	}
 
 	public void setName(String name) {
+		System.out.println("setName");
 		this.name = name;
 	}
 
@@ -23,6 +28,7 @@ public class Person {
 	}
 
 	public void setAge(Integer age) {
+		System.out.println("setAge");
 		this.age = age;
 	}
 
@@ -31,6 +37,7 @@ public class Person {
 	}
 
 	public void setCars(List<Car> cars) {
+		System.out.println("setCars");
 		this.cars = cars;
 	}
 
@@ -41,5 +48,13 @@ public class Person {
 				.append(",age:").append(String.valueOf(this.age))
 				.append(",cars:").append(this.cars).append("}");
 		return str.toString();
+	}
+
+	public void init() {
+		System.out.println("init");
+	}
+
+	public void destroy() {
+		System.out.println("destroy");
 	}
 }

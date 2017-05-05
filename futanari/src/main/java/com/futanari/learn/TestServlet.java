@@ -1,6 +1,7 @@
 package com.futanari.learn;
 
 import com.alibaba.fastjson.JSONObject;
+import org.apache.commons.lang3.time.FastDateFormat;
 import org.apache.log4j.Logger;
 
 import javax.servlet.ServletException;
@@ -10,13 +11,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 
 public class TestServlet extends HttpServlet {
 
-	private SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss:SSS");
+	private FastDateFormat sdf = FastDateFormat.getInstance("yyyy-MM-dd hh:mm:ss:SSS");
 
 	private final static Logger logger = Logger.getLogger(TestServlet.class);
 

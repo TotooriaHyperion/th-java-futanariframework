@@ -10,13 +10,12 @@ import java.math.BigDecimal;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.NoSuchAlgorithmException;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
 public class HelloWorld {
 
-	private static SimpleDateFormat sdf3 = new SimpleDateFormat("yyyy-MM-dd");
+	private static FastDateFormat sdf3 = FastDateFormat.getInstance("yyyy-MM-dd");
 
 	public static void main(String[] args) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidAlgorithmParameterException, ParseException {
 		String appId = "wx4f4bc4dec97d474b";
@@ -99,7 +98,7 @@ class CalculateTime implements Runnable {
 
 	private static FastDateFormat sdf3 = FastDateFormat.getInstance("yyyy-MM-dd");
 
-//	private static SimpleDateFormat sdf3 = new SimpleDateFormat("yyyy-MM-dd");
+//	private static FastDateFormat sdf3 = FastDateFormat.getInstance("yyyy-MM-dd");
 
 	@Override
 	public void run() {

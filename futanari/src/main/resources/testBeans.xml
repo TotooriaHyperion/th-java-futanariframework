@@ -23,13 +23,19 @@
        http://www.springframework.org/schema/jdbc
        http://www.springframework.org/schema/jdbc/spring-jdbc-3.0.xsd">
 
+	<bean id="myBeanPostProcessor" class="com.futanari.learn.TestBeansPostProcessor"/>
+
 	<bean id="car1" class="com.futanari.model.Car">
 		<property name="type">
 			<value><![CDATA[<宝马>]]></value>
 		</property>
 	</bean>
 
-	<bean id="person1" class="com.futanari.model.Person">
+	<bean id="person1"
+	      class="com.futanari.model.Person"
+	      init-method="init"
+	      destroy-method="destroy"
+	>
 		<property name="name" value="Tom"/>
 		<property name="age" value="14"/>
 		<property name="cars">
