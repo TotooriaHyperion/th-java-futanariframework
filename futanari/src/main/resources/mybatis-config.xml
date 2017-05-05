@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias alias="StringArrayTypeHandler" type="com.futanari.components.StringArrayTypeHandler"/>
+		<typeAlias alias="StringArray2TypeHandler" type="com.futanari.components.StringArray2TypeHandler"/>
+		<typeAlias alias="LongDateTypeHandler" type="com.futanari.components.LongDateTypeHandler"/>
+		<typeAlias alias="LongDateSecondsTypeHandler" type="com.futanari.components.LongDateSecondsTypeHandler"/>
+	</typeAliases>
+	<typeHandlers>
+		<typeHandler handler="StringArrayTypeHandler" />
+		<typeHandler handler="StringArray2TypeHandler" />
+		<typeHandler handler="LongDateTypeHandler" />
+		<typeHandler handler="LongDateSecondsTypeHandler" />
+	</typeHandlers>
+	<plugins>
+		<plugin interceptor="com.futanari.components.BatisInterceptor">
+			<property name="executeTime" value="1"/>
+		</plugin>
+	</plugins>
+	<mappers>
+	</mappers>
+</configuration>

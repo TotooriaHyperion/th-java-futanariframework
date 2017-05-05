@@ -1,4 +1,4 @@
-package com.futanari;
+package com.futanari.learn;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.serializer.SerializerFeature;
@@ -10,7 +10,7 @@ import java.util.Date;
 import java.util.HashMap;
 
 /**
- * Created by user on 2017/4/17.
+ * Created by Totooria Hyperion on 2017/4/17.
  */
 public class TestBigDecimal {
 

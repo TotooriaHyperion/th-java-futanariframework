@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.futanari.dao.UserTypeMapper" >
+	<resultMap id="BaseResultMap" type="com.futanari.model.UserType" >
+		<id column="id" property="id" jdbcType="BIGINT" />
+		<result column="user_type_name" property="userTypeName" jdbcType="VARCHAR" />
+		<result column="enabled" property="enabled" jdbcType="BIT" />
+		<result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+	</resultMap>
+
+	<sql id="paging">
+		<if
+			test="page_size != null and page_size != '' and page != null and page != ''">
+			limit ${(page-1) * page_size},#{page_size}
+		</if>
+		<if
+			test="page_size != null and page_size != '' and (page == null or page=='')">
+			limit 0,#{page_size}
+		</if>
+	</sql>
+
+	<insert id="insertOne" parameterType="com.futanari.model.UserType" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO user_type
+		(
+		user_type_name,
+		enabled,
+		create_time
+		)
+		VALUES (
+		#{userTypeName,jdbcType=VARCHAR},
+		#{enabled,jdbcType=BIT},
+		SYSDATE()
+		)
+	</insert>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long">
+		SELECT * FROM user_type
+		WHERE id = #{id,jdbcType=BIGINT}
+	</select>
+
+</mapper>

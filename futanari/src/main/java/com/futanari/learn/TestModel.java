@@ -1,9 +1,9 @@
-package com.futanari;
+package com.futanari.learn;
 
 import java.util.Date;
 
 /**
- * Created by user on 2017/4/19.
+ * Created by Totooria Hyperion on 2017/4/19.
  */
 public class TestModel {
 

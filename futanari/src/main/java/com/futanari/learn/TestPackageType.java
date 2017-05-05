@@ -1,7 +1,7 @@
-package com.futanari;
+package com.futanari.learn;
 
 /**
- * Created by user on 2017/5/3.
+ * Created by Totooria Hyperion on 2017/5/3.
  */
 public class TestPackageType {
 	public static void main(String[] args) {

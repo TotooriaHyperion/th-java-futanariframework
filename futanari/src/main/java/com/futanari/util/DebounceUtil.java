@@ -1,13 +1,11 @@
-package com.futanari;
-
-import org.apache.log4j.Logger;
+package com.futanari.util;
 
 import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
 
 /**
- * Created by user on 2017/4/26.
+ * Created by Totooria Hyperion on 2017/4/26.
  */
 public class DebounceUtil {
 

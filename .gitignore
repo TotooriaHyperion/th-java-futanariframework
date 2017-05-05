@@ -2,3 +2,4 @@
 *.iml
 futanari/target/
 futanari_blog/target/
+*/**/resources/*.properties

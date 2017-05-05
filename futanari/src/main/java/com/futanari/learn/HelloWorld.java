@@ -1,4 +1,4 @@
-package com.futanari;
+package com.futanari.learn;
 
 import com.futanari.util.AESUtil;
 import com.futanari.util.WXBizDataCrypt;

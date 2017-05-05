@@ -1,11 +1,11 @@
-package com.futanari;
+package com.futanari.learn;
 
-import java.util.Date;
+import com.futanari.util.DebounceUtil;
+
 import java.util.Timer;
-import java.util.TimerTask;
 
 /**
- * Created by user on 2017/4/26.
+ * Created by Totooria Hyperion on 2017/4/26.
  */
 public class TestTimer {
 
