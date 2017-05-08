@@ -60,6 +60,9 @@
 
 		<!-- auth ref -->
 
+		<!-- nosql ref -->
+		<jedis.version>2.9.0</jedis.version>
+
 	</properties>
 
 	<dependencies>
@@ -256,6 +259,13 @@
 			<groupId>org.apache.shiro</groupId>
 			<artifactId>shiro-core</artifactId>
 			<version>1.3.2</version>
+		</dependency>
+
+		<!-- nosql ref -->
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+			<version>${jedis.version}</version>
 		</dependency>
 
 	</dependencies>

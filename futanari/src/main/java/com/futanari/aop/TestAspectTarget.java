@@ -22,4 +22,11 @@ public class TestAspectTarget {
 		return a * b;
 	}
 
+	public Integer div(Integer a, Integer b) {
+		if (null == a || null == b) {
+			return null;
+		}
+		return a / b;
+	}
+
 }

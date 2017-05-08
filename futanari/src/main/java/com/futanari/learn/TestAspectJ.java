@@ -18,10 +18,16 @@ public class TestAspectJ {
 		ApplicationContext ac = new ClassPathXmlApplicationContext("applicationContext.xml");
 		TestAspectTarget testAspectTarget = (TestAspectTarget) ac.getBean("testAspectTarget");
 		logger.info(testAspectTarget.toString());
-		Integer c = testAspectTarget.add(1,2);
-		logger.info(String.valueOf(c));
-		c = testAspectTarget.mul(2,4);
-		logger.info(String.valueOf(c));
+		try {
+			Integer c = testAspectTarget.add(1, 2);
+			logger.info(String.valueOf(c));
+			c = testAspectTarget.mul(2, 4);
+			logger.info(String.valueOf(c));
+			c = testAspectTarget.div(2, 0);
+			logger.info(String.valueOf(c));
+		} catch (Exception e) {
+//			logger.info(TestAspectJ.class + ".main:\t\t" + e.getMessage(), e);
+		}
 
 	}
 
