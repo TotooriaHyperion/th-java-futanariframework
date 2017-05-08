@@ -15,8 +15,10 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 /**
  * Created by TotooriaHyperion on 2017/5/5.
  */
-@ContextConfiguration(locations = { "classpath:applicationContext.xml" })
 @RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations = {
+		"classpath*:applicationContext.xml"
+})
 public class TestService {
 
 	private static final Logger logger = LoggerFactory.getLogger(TestService.class);
