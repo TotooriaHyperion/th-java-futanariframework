@@ -33,7 +33,7 @@ public class TestDao {
 		System.out.println(userTypeMapper);
 
 		UserType userType = new UserType();
-		userType.setUserTypeName("UserType");
+		userType.setUserTypeName("类型");
 		userType.setEnabled(true);
 		Integer count = userTypeMapper.insertOne(userType);
 		System.out.println(count);

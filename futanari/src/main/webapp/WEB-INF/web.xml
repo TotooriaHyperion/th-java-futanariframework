@@ -35,6 +35,21 @@
   </listener>
 
   <servlet>
+    <servlet-name>springDispatchServlet</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+    <init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>classpath:applicationContext.xml</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>springDispatchServlet</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
     <servlet-name>TestServlet</servlet-name>
     <servlet-class>com.futanari.learn.TestServlet</servlet-class>
   </servlet>
