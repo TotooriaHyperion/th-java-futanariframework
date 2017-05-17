@@ -31,7 +31,9 @@ public class AlgorithmRabbitBorn {
 		printMatrix(a);
 		Long[][] ret = matrixMultiply(a,a);
 		printMatrix(ret);
-		Long[][] rabbitMatrix = generateRabbitMatrix(24,4);
+		// lifetime = 18 month
+		// start produce rabbit from 5th month
+		Long[][] rabbitMatrix = generateRabbitMatrix(18,5);
 //		printMatrix(rabbitMatrix);
 		for(int i=1;i<=26;i++) {
 			System.out.println(calculateRabbitsUseMatrix(rabbitMatrix,i));
